@@ -6,6 +6,8 @@
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script src="thoora.js"></script>
 	<script src="jquery-truncate.js"></script>
+	<link rel="stylesheet" type="text/css" href="shadowbox-3.0.3/shadowbox.css">
+	<script type="text/javascript" src="shadowbox-3.0.3/shadowbox.js"></script>
 	<link type="text/css" rel="stylesheet" href="style.css" media="all" />
 </head>
 
@@ -13,9 +15,18 @@
 	<div id=site_container>		
 		<div id="site_title"></div>
 		<div id="content_container">
-			<div id="stories_container"></div><div id="twitter_container"></div>
+			<div id="stories_container"></div>
+			<div id="widgets_container">
+				<div id="twitter_container">
+					<div id="twitter_widget_title"></div>
+				</div>
+				<div id="images_container">
+					<div id="images_widget_title"></div>
+					<div id="images"></div>
+				</div>
+			</div>
 			<div id="loadmore_container">
-				<div id="color_block"></div>
+				<div class="color_block"></div>
 				<div id="loadmore_button">LOAD MORE</div>
 			</div>		
 		</div>

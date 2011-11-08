@@ -44,27 +44,36 @@ body {
 #stories_container {
 	vertical-align:top;
 	display:inline-block;
-	background-color:yellow;
-	width:692px;
+	width:747px;
+}
+
+#widgets_container {
+	vertical-align:top;
+	display:inline-block;
+	width:220px;
+	height:1000px;
+	margin-left: 15px;
 }
 
 #twitter_container {
 	vertical-align:top;
-	display:inline-block;
-	background-color:blue;
-	width:315px;
+	padding-top:10px;
+	width:220px;
+	height:375px;
+	background-image:url('images/sidebar.png');
+}
+
+#images_container {
+	vertical-align: top;
+	padding-top:10px;
+	width:220px;
+	height:375px;
+	background-image:url('images/sidebar.png');
 }
 
 #loadmore_container {
 	width:747px;
-	height:50px;
-}
-
-#color_block {
-	display:inline-block;
-	height:50px;
-	width: 62px;
-	background-color:#545454;
+	height:36px;
 }
 
 #loadmore_button {
@@ -73,6 +82,29 @@ body {
 	position:relative;
 	top:-18px;
 	font-family:candara;
+}
+
+#images_widget_title {
+	margin-top: 10px;
+	margin-left: 30px;
+	width:171px;
+	height:56px;
+	background-image:url('images/images.png');
+}
+
+#twitter_widget_title {
+	margin-top: 10px;
+	margin-left: 30px;
+	width:171px;
+	height:56px;
+	background-image:url('images/twitter.png');
+}
+
+.color_block {
+	display:inline-block;
+	height:36px;
+	width: 62px;
+	background-color:#545454;
 }
 
 .story_container {
@@ -88,20 +120,23 @@ body {
 }
 
 .story_title {
-	padding-top:20px;
+	padding-top:10px;
 	width:670px;
 	height: 50px;
 	text-transform: uppercase;
 	font-family:candara;
+	font-size: 18pt;
 }
 
 .story_body {
-	padding-left:70px;
+	margin-left:15px;
+	display:inline-block;
 	width:677px;
 	height:190px;
 }
 
 .story_desc {
+	padding-top:10px;
 	width:670px;
 	height:120px;
 	font-family:candara-italic;
@@ -137,5 +172,50 @@ body {
 
 .divider_container {
 	height:36px;
-	width:670px;
+	width:747px;
+}
+
+.domain {
+	display:inline;
+	vertical-align: top;
+	margin-left: 8px;
+	font-family: candara;
+	color:#848484;
+}
+
+.date_container {
+	vertical-align:top;
+	margin-top: 9px;
+	margin-left:15px;
+	display:inline-block;
+	height:60px;
+	width:40px;	
+	font-family: candara;
+	color:white;
+}
+
+.month {
+	text-transform: uppercase;
+	height:16px;
+	width:40px;
+}
+
+.date {
+	height:16px;
+	width:30px;
+}
+
+#images {
+	margin-top: 30px;
+}
+
+.image_row {
+margin-left: 21px;
+}
+
+.image {
+	display:inline;
+	padding-right:4px;
+	height:35px;
+	width:35px;
 }
