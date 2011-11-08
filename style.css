@@ -1,0 +1,141 @@
+@font-face {
+	font-family: candara;
+	src: url('fonts/Candara/Candara.ttf');
+}
+
+@font-face {
+	font-family: candara-italic;
+	src: url('fonts/Candara/Candara Italic.ttf');
+}
+
+body {
+	background-image:url('images/bg_texture.jpg');
+}
+
+#site_title {
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	height:167px;
+	width:1007px;
+	background-image:url('images/title.png');
+}
+
+#site_container {
+	width:1007px;
+	margin-left:auto;
+	margin-right:auto;	
+}
+
+#site_footer {
+	width:1007px;
+	height:100px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#content_container {
+	background-color:#DCDCDC;
+	width:1007px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#stories_container {
+	vertical-align:top;
+	display:inline-block;
+	background-color:yellow;
+	width:692px;
+}
+
+#twitter_container {
+	vertical-align:top;
+	display:inline-block;
+	background-color:blue;
+	width:315px;
+}
+
+#loadmore_container {
+	width:747px;
+	height:50px;
+}
+
+#color_block {
+	display:inline-block;
+	height:50px;
+	width: 62px;
+	background-color:#545454;
+}
+
+#loadmore_button {
+	display:inline;
+	margin-left:294px;
+	position:relative;
+	top:-18px;
+	font-family:candara;
+}
+
+.story_container {
+	width:747px;
+	height:190px;
+	background-image:url('images/story_bg_no_img.jpg');
+}
+
+.story_container_img {
+	width:747px;
+	height:235px;
+	background-image:url('images/story_bg_img.jpg');
+}
+
+.story_title {
+	padding-top:20px;
+	width:670px;
+	height: 50px;
+	text-transform: uppercase;
+	font-family:candara;
+}
+
+.story_body {
+	padding-left:70px;
+	width:677px;
+	height:190px;
+}
+
+.story_desc {
+	width:670px;
+	height:120px;
+	font-family:candara-italic;
+	color:#848484;
+}
+
+.story_desc a {
+	text-decoration: none;
+	color:#848484;
+}
+
+.story_desc_img {
+	display:inline-block;
+	vertical-align:top;
+	padding-left: 20px;
+	width:400px;
+	height:120px;
+	font-family:candara-italic;
+	color:#848484;
+}
+
+.story_desc_img a {
+	text-decoration: none;
+	color:#848484;
+}
+
+.story_img {
+	vertical-align:top;
+	width:250px;
+	height:148px;
+	display:inline;
+}
+
+.divider_container {
+	height:36px;
+	width:670px;
+}
