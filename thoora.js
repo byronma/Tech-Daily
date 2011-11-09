@@ -5,6 +5,8 @@ $(document).ready(function() {
 	page_number = 1;
 	
 	getNewsData(page_number);
+	getTweets();
+	
 	getImages();
 	
 	$('#loadmore_button').click(function() {
@@ -59,6 +61,31 @@ function getNewsData(page_number) {
 	)
 }
 
+function getTweets() {
+	var api_url = "http://devweb1/public_api/v1/tweets/all_tweets.jsonp?&callback=?";
+	var topic_id = "4873630349695342280";
+	var api_token = "b4592be7450b267100e35d0d20acdb99";
+	$.getJSON(api_url,
+	  {
+	    api_token: api_token,
+	    topic_id: topic_id,
+	  },
+		function(data) {
+			$.each(data.tweets, function(i, item) {
+				var published_date = new Date();
+				var tweet_screen_name_div = '<div class="tweet_screen_name"><a href="http://twitter.com/#!/' + item.screen_name + '">' + item.screen_name + '</a></div>';
+				var tweet_text_div = '<div class="tweet_text">' + transformTweet(item.text) + '</div>';
+				var tweet_timestamp = '<div class="tweet_timestamp">' + getTimeDiff(item.created_at) + '</div>';
+				var tweet = '<div class="tweet">' + tweet_screen_name_div + tweet_text_div + tweet_timestamp + '</div>'
+				
+				$(tweet).appendTo('.overview'); 
+			})
+			$('#scrollbar1').tinyscrollbar();
+		}	
+	)
+}
+
+
 function getImages() {
 	var api_url = "http://devweb1/public_api/v1/images/all_images.jsonp?&callback=?";
 	var topic_id = "4873630349695342280";
@@ -95,4 +122,39 @@ function getImages() {
 function get_hostname(url) {
     var m = ((url||'')+'').match(/(^http:\/\/)([^/]+)/);
     return m ? m[2] : null;
+}
+
+function getTimeDiff(timestamp) {
+	var diff_secs = new Date().getTime()/1000 - timestamp;
+	
+	if (diff_secs < 60) 
+		return (diff_secs > 1)? parseInt(diff_secs) + ' seconds ago': parseInt(diff_secs) + ' second ago';
+		
+	var diff_mins =  parseInt(diff_secs/60);
+	
+	if (diff_mins < 60) 		
+		return (diff_mins > 1)? diff_mins + ' mins ago': diff_mins + ' min ago';
+	
+	var diff_hrs = parseInt(diff_mins/60);
+	if (diff_hrs < 24) {
+		return (diff_hrs > 1)? diff_hrs + ' hours ago': diff_hrs + ' hour ago';
+	}
+	var diff_days = parseInt(diff_hrs/24);
+	return (diff_days > 1)? diff_days + ' days ago': diff_days + ' day ago';
+}
+
+function transformTweet(tweet) {
+	tweet_link_trans = tweet.replace(/http:\/\/\S+/g, function(match) {
+		return '<a href="' + match + '">' + match + '</a>';
+	});
+	
+	tweet_name_trans = tweet_link_trans.replace(/@[0-9a-zA-Z]+/g, function(match) {
+		return '<a href="http://twitter.com/#!/' + match + '">' + match + '</a>';
+	});
+	
+	tweet_hash_trans = tweet_link_trans.replace(/ #(\S+)/g, function(match, match2) {
+		return '<a href="http://twitter.com/#!/search?q=%23' + match2 + '">' + match + '</a>';
+	});
+	
+	return tweet_hash_trans;
 }

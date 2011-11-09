@@ -8,6 +8,11 @@
 	src: url('fonts/Candara/Candara Italic.ttf');
 }
 
+@font-face {
+	font-family: candara-bold;
+	src: url('fonts/Candara/Candara Bold.ttf');
+}
+
 body {
 	background-image:url('images/bg_texture.jpg');
 }
@@ -217,7 +222,7 @@ body {
 }
 
 #images {
-	margin-top: 30px;
+	margin-top: 15px;
 }
 
 .image_row {
@@ -230,3 +235,47 @@ margin-left: 21px;
 	height:35px;
 	width:35px;
 }
+
+/* Twitter widget */
+.tweet {
+	font-family: candara;
+	font-size: 12pt;
+	width:185px;
+}
+
+.tweet_screen_name {
+	font-family: candara-bold;
+	font-size: 12pt;
+	width:185px;
+}
+
+.tweet_screen_name a{
+	color: black;
+}
+
+.tweet_text {
+	font-size: 10pt;
+}
+
+.tweet_text a{
+	font-size: 10pt;
+	color: #085761;
+	text-decoration: none;
+}
+
+.tweet_timestamp {
+	font-size: 10pt;
+	color:#848484;
+}
+
+/* scrollbar for Twitter widget */
+#scrollbar1 { width: 220px; clear: both; margin: 15px 0 10px; }
+#scrollbar1 .viewport { margin-left: 20px; width: 185px; height: 286px; overflow: hidden; position: relative; }
+#scrollbar1 .overview { list-style: none; position: absolute; left: 0; top: 0; }
+#scrollbar1 .thumb .end,
+#scrollbar1 .thumb { background-color: #545454; }
+#scrollbar1 .scrollbar { position: relative; float: right; width: 5px; }
+#scrollbar1 .track { background-color: #D8EEFD; height: 100%; width:5px; position: relative; padding: 0 1px; }
+#scrollbar1 .thumb { height: 20px; width: 5px; cursor: pointer; overflow: hidden; position: absolute; top: 0; }
+#scrollbar1 .thumb .end { overflow: hidden; height: 5px; width: 5px; }
+#scrollbar1 .disable{ display: none; }
