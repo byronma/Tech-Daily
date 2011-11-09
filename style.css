@@ -77,11 +77,22 @@ body {
 }
 
 #loadmore_button {
-	display:inline;
-	margin-left:294px;
+	margin-left:310px;
 	position:relative;
-	top:-18px;
-	font-family:candara;
+	top:-55px;
+	height:45px;
+	width:152px;
+	background-image:url('images/more_news.png');
+}
+
+#loadmore_button:hover {
+	margin-left:310px;
+	position:relative;
+	top:-55px;
+	height:45px;
+	width:152px;
+	background-image: url('images/more_news.png');
+	background-position: 0 -45px;
 }
 
 #images_widget_title {
@@ -125,7 +136,7 @@ body {
 	height: 50px;
 	text-transform: uppercase;
 	font-family:candara;
-	font-size: 18pt;
+	font-size: 15pt;
 }
 
 .story_body {

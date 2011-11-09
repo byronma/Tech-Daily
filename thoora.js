@@ -54,6 +54,7 @@ function getNewsData(page_number) {
 			})
 			$('.story_desc').truncatable({    limit: 600, more: '...', less: 'false'});
 			$('.story_desc_img').truncatable({    limit: 500, more: '...', less: 'false'});
+			$('.story_title').truncatable({    limit: 60, more: '...', less: 'false'});
 		}
 	)
 }
