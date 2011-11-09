@@ -13,6 +13,11 @@
 	src: url('fonts/Candara/Candara Bold.ttf');
 }
 
+@font-face {
+	font-family: tradeGothic;
+	src: url('fonts/TradeGothicLTStd-BdCn20.otf');
+}
+
 body {
 	background-image:url('images/bg_texture.jpg');
 }
@@ -136,12 +141,12 @@ body {
 }
 
 .story_title {
-	padding-top:10px;
+	margin-top:25px;
 	width:670px;
-	height: 50px;
+	height: 25px;
 	text-transform: uppercase;
-	font-family:candara;
-	font-size: 15pt;
+	font-family:tradeGothic;
+	font-size: 18pt;
 }
 
 .story_body {
@@ -152,10 +157,10 @@ body {
 }
 
 .story_desc {
-	padding-top:10px;
+	margin-top:10px;
 	width:670px;
 	height:120px;
-	font-family:candara-italic;
+	font-family:arial;
 	color:#848484;
 }
 
@@ -165,6 +170,7 @@ body {
 }
 
 .story_desc_img {
+	margin-top:10px;
 	display:inline-block;
 	vertical-align:top;
 	padding-left: 20px;
@@ -180,6 +186,7 @@ body {
 }
 
 .story_img {
+	margin-top:10px;
 	vertical-align:top;
 	width:250px;
 	height:148px;

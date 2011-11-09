@@ -30,6 +30,8 @@ function getNewsData(page_number) {
 	  },
 		function(data) {
 			$.each(data.stories, function(i, item) {
+				if (item.description == '')
+					return;
 				var published_date = new Date();
 				published_date.setTime(item.timestamp * 1000);
 				published_month = published_date.toDateString().substring(4, 8) + '.';
@@ -41,7 +43,7 @@ function getNewsData(page_number) {
 				if (item.image_medium != '') {
 
 					var title_div = '<div class="story_title">' + item.title + '</div>';
-					var image_div = '<div class="story_img"><img src="' + item.image_medium + '"/></div>';
+					var image_div = '<img class="story_img" src="' + item.image_medium + '"/>';
 					var desc_div = '<div class="story_desc_img"><a href="' + item.source_url + '">' + item.description + '</a></div>';
 					var body_div = '<div class="story_body">' + title_div + image_div + desc_div + '</div>';
 					var story_div = '<div class="story_container_img">' + date_div + body_div + '</div>';
@@ -54,9 +56,9 @@ function getNewsData(page_number) {
 					$(story_div + divider_div).appendTo('#stories_container');
 				}
 			})
-			$('.story_desc').truncatable({    limit: 600, more: '...', less: 'false'});
-			$('.story_desc_img').truncatable({    limit: 500, more: '...', less: 'false'});
-			$('.story_title').truncatable({    limit: 60, more: '...', less: 'false'});
+			$('.story_desc').truncatable({limit: 600, more: '...', less: 'false'});
+			$('.story_desc_img').truncatable({limit: 500, more: '...', less: 'false'});
+			$('.story_title').truncatable({limit: 50, more: '...', less: 'false'});
 		}
 	)
 }
@@ -152,7 +154,7 @@ function transformTweet(tweet) {
 		return '<a href="http://twitter.com/#!/' + match + '">' + match + '</a>';
 	});
 	
-	tweet_hash_trans = tweet_link_trans.replace(/ #(\S+)/g, function(match, match2) {
+	tweet_hash_trans = tweet_name_trans.replace(/ #(\S+)/g, function(match, match2) {
 		return '<a href="http://twitter.com/#!/search?q=%23' + match2 + '">' + match + '</a>';
 	});
 	
