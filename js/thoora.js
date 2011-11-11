@@ -1,4 +1,9 @@
 $(document).ready(function() {
+	
+	// Add your topic and API token here.
+	topic_id = "920599614675160476";
+	api_token = "79f1e9322f5347e1f355032868f7eacd";
+
 	//Initialize shadow box
 	Shadowbox.init();
 	
@@ -10,16 +15,12 @@ $(document).ready(function() {
 	getImages();
 	
 	$('#loadmore_button').click(function() {
-		page_number ++;
-		getNewsData(page_number);
+		getNewsData();
 	});
 });
-
 	
-function getNewsData(page_number) {
+function getNewsData() {
 	var api_url = "http://devweb1/public_api/v1/news/all_stories.jsonp?&callback=?";
-	var topic_id = "4873630349695342280";
-	var api_token = "b4592be7450b267100e35d0d20acdb99";
 	var stories_per_page = "6";
 	$.getJSON(api_url,
 	  {
@@ -29,6 +30,10 @@ function getNewsData(page_number) {
 		page_number: page_number,
 	  },
 		function(data) {
+			
+			if (data.stories.length > 0)
+				page_number ++;
+				
 			$.each(data.stories, function(i, item) {
 				if (item.description == '')
 					return;
@@ -58,15 +63,14 @@ function getNewsData(page_number) {
 			})
 			$('.story_desc').truncatable({limit: 600, more: '...', less: 'false'});
 			$('.story_desc_img').truncatable({limit: 500, more: '...', less: 'false'});
-			$('.story_title').truncatable({limit: 50, more: '...', less: 'false'});
+			$('.story_title').truncatable({limit: 60, more: '...', less: 'false'});
 		}
 	)
 }
 
 function getTweets() {
 	var api_url = "http://devweb1/public_api/v1/tweets/all_tweets.jsonp?&callback=?";
-	var topic_id = "4873630349695342280";
-	var api_token = "b4592be7450b267100e35d0d20acdb99";
+
 	$.getJSON(api_url,
 	  {
 	    api_token: api_token,
@@ -90,8 +94,7 @@ function getTweets() {
 
 function getImages() {
 	var api_url = "http://devweb1/public_api/v1/images/all_images.jsonp?&callback=?";
-	var topic_id = "4873630349695342280";
-	var api_token = "b4592be7450b267100e35d0d20acdb99";
+
 	$.getJSON(api_url,
 	  {
 	    api_token: api_token,

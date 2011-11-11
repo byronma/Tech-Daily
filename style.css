@@ -1,3 +1,4 @@
+/* Declare fonts */
 @font-face {
 	font-family: candara;
 	src: url('fonts/Candara/Candara.ttf');
@@ -18,6 +19,7 @@
 	src: url('fonts/TradeGothicLTStd-BdCn20.otf');
 }
 
+/* Declare site's sections */
 body {
 	background-image:url('images/bg_texture.jpg');
 }
@@ -65,22 +67,15 @@ body {
 	margin-left: 15px;
 }
 
-#twitter_container {
-	vertical-align:top;
-	padding-top:10px;
-	width:220px;
-	height:375px;
-	background-image:url('images/sidebar.png');
+/* Grey color block left of load more button. */
+.color_block {
+	display:inline-block;
+	height:36px;
+	width: 62px;
+	background-color:#545454;
 }
 
-#images_container {
-	vertical-align: top;
-	padding-top:10px;
-	width:220px;
-	height:375px;
-	background-image:url('images/sidebar.png');
-}
-
+/* Load more button */
 #loadmore_container {
 	width:747px;
 	height:36px;
@@ -105,6 +100,15 @@ body {
 	background-position: 0 -45px;
 }
 
+/* Images section */
+#images_container {
+	vertical-align: top;
+	padding-top:10px;
+	width:220px;
+	height:375px;
+	background-image:url('images/sidebar.png');
+}
+
 #images_widget_title {
 	margin-top: 10px;
 	margin-left: 30px;
@@ -113,21 +117,22 @@ body {
 	background-image:url('images/images.png');
 }
 
-#twitter_widget_title {
-	margin-top: 10px;
-	margin-left: 30px;
-	width:171px;
-	height:56px;
-	background-image:url('images/twitter.png');
+#images {
+	margin-top: 15px;
 }
 
-.color_block {
-	display:inline-block;
-	height:36px;
-	width: 62px;
-	background-color:#545454;
+.image_row {
+margin-left: 21px;
 }
 
+.image {
+	display:inline;
+	padding-right:4px;
+	height:35px;
+	width:35px;
+}
+
+/* News story section */
 .story_container {
 	width:747px;
 	height:190px;
@@ -146,7 +151,7 @@ body {
 	height: 25px;
 	text-transform: uppercase;
 	font-family:tradeGothic;
-	font-size: 18pt;
+	font-size: 16pt;
 }
 
 .story_body {
@@ -176,7 +181,7 @@ body {
 	padding-left: 20px;
 	width:400px;
 	height:120px;
-	font-family:candara-italic;
+	font-family:candara;
 	color:#848484;
 }
 
@@ -228,22 +233,15 @@ body {
 	width:30px;
 }
 
-#images {
-	margin-top: 15px;
+/* Twitter section */
+#twitter_container {
+	vertical-align:top;
+	padding-top:10px;
+	width:220px;
+	height:375px;
+	background-image:url('images/sidebar.png');
 }
 
-.image_row {
-margin-left: 21px;
-}
-
-.image {
-	display:inline;
-	padding-right:4px;
-	height:35px;
-	width:35px;
-}
-
-/* Twitter widget */
 .tweet {
 	font-family: candara;
 	font-size: 12pt;
@@ -273,6 +271,14 @@ margin-left: 21px;
 .tweet_timestamp {
 	font-size: 10pt;
 	color:#848484;
+}
+
+#twitter_widget_title {
+	margin-top: 10px;
+	margin-left: 30px;
+	width:171px;
+	height:56px;
+	background-image:url('images/twitter.png');
 }
 
 /* scrollbar for Twitter widget */
