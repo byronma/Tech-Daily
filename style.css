@@ -88,6 +88,7 @@ body {
 	height:45px;
 	width:152px;
 	background-image:url('images/more_news.png');
+	cursor: pointer;
 }
 
 #loadmore_button:hover {
@@ -98,6 +99,7 @@ body {
 	width:152px;
 	background-image: url('images/more_news.png');
 	background-position: 0 -45px;
+	cursor: pointer;
 }
 
 /* Images section */
